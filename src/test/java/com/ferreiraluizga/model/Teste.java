@@ -1,19 +1,42 @@
 package com.ferreiraluizga.model;
 
+import java.util.Scanner;
+
 public class Teste {
     public static void main(String[] args) {
-        Cliente c1 = new Cliente();
-        c1.setNome("Roberto");
-        c1.setCpf("12345678900");
-        c1.setTelefone("11987654321");
-        c1.setEmail("roberto@gmail.com");
-        mostrarDados(c1);
-    }
+        Scanner scanner = new Scanner(System.in);
 
-    public static void mostrarDados(Cliente cliente) {
-        System.out.println("===== Cliente: " + cliente.getNome() + " =====" +
-                "\nCPF: " + cliente.getCpf() +
-                "\nTelefone: " + cliente.getTelefone() +
-                "\nE-Mail: " + cliente.getEmail());
+        // instanciando objeto da classe Cliente
+        Cliente c1 = new Cliente();
+
+        System.out.print("Digite seu Nome: ");
+        c1.setNome(scanner.nextLine());
+
+        System.out.print("Digite seu CPF: ");
+        c1.setCpf(scanner.nextLine());
+
+        System.out.print("Digite seu Telefone: ");
+        c1.setTelefone(scanner.nextLine());
+
+        System.out.print("Digite seu E-mail: ");
+        c1.setEmail(scanner.nextLine());
+
+        // instanciando objeto da classe Produto
+        Produto p1 = new Produto();
+
+        System.out.print("Digite o nome do produto: ");
+        p1.setNome(scanner.nextLine());
+
+        System.out.print("Digite a descrição do produto: ");
+        p1.setDescricao(scanner.nextLine());
+
+        System.out.print("Digite o preço do produto: ");
+        p1.setPreco(scanner.nextBigDecimal());
+
+        System.out.print("Digite a quantidade em estoque do produto: ");
+        p1.setEstoque(scanner.nextInt());
+
+        System.out.println(c1.toString());
+        System.out.println(p1.toString());
     }
 }

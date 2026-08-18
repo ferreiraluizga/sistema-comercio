@@ -50,4 +50,12 @@ public class Cliente {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "\n===== Cliente: " + this.nome + " =====" +
+                "\nCPF: " + this.cpf +
+                "\nTelefone: " + this.telefone +
+                "\nE-mail: " + this.email;
+    }
+
 }

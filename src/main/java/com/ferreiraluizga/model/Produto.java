@@ -9,7 +9,7 @@ public class Produto {
     private String nome;
     private String descricao;
     private BigDecimal preco;
-    private Integer estoque;
+    private int estoque = 0;
 
     // getters e setters
     public Long getIdProduto() {
@@ -44,12 +44,20 @@ public class Produto {
         this.preco = preco;
     }
 
-    public Integer getEstoque() {
+    public int getEstoque() {
         return estoque;
     }
 
-    public void setEstoque(Integer estoque) {
+    public void setEstoque(int estoque) {
         this.estoque = estoque;
+    }
+
+    @Override
+    public String toString() {
+        return "\n===== Produto: " + this.nome + " =====" +
+                "\nDescrição: " + this.descricao +
+                "\nPreço: " + this.preco +
+                "\nEstoque: " + this.estoque;
     }
 
 }
