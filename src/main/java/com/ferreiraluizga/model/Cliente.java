@@ -9,6 +9,23 @@ public class Cliente {
     private String telefone;
     private String email;
 
+    // construtor vazio
+    public Cliente() {}
+
+    // construtor com parâmetros not null do banco
+    public Cliente(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    // construtor com todos os parâmetros
+    public Cliente(String nome, String cpf, String telefone, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+    }
+
     // getters e setters
     public Long getIdCliente() {
         return idCliente;
@@ -52,7 +69,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "\n===== Cliente: " + this.nome + " =====" +
+        return "===== Cliente: " + this.nome + " =====" +
                 "\nCPF: " + this.cpf +
                 "\nTelefone: " + this.telefone +
                 "\nE-mail: " + this.email;

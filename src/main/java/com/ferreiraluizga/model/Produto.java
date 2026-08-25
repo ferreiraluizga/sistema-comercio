@@ -11,6 +11,21 @@ public class Produto {
     private BigDecimal preco;
     private int estoque = 0;
 
+    // construtor vazio
+    public Produto() {}
+
+    // construtor com parâmetros not null do banco
+    public Produto(String nome, BigDecimal preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public Produto(String nome, String descricao, BigDecimal preco) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+    }
+
     // getters e setters
     public Long getIdProduto() {
         return idProduto;
@@ -48,13 +63,15 @@ public class Produto {
         return estoque;
     }
 
-    public void setEstoque(int estoque) {
-        this.estoque = estoque;
+    public void atualizaEstoque(int quant) {
+        if (quant > 0) {
+            this.estoque += quant;
+        }
     }
 
     @Override
     public String toString() {
-        return "\n===== Produto: " + this.nome + " =====" +
+        return "===== Produto: " + this.nome + " =====" +
                 "\nDescrição: " + this.descricao +
                 "\nPreço: " + this.preco +
                 "\nEstoque: " + this.estoque;
