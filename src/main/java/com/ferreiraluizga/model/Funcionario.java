@@ -102,7 +102,7 @@ public class Funcionario {
 
     @Override
     public String toString() {
-        return "===== Funcionário: " + this.nome + " =====" +
+        return "Nome: " + this.nome +
                 "\nCPF: " + this.cpf +
                 "\nCargo: " + this.cargo +
                 "\nData de Admissão: " + this.dataAdmissao +

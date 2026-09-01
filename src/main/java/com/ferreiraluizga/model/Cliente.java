@@ -69,7 +69,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "===== Cliente: " + this.nome + " =====" +
+        return "Nome: " + this.nome +
                 "\nCPF: " + this.cpf +
                 "\nTelefone: " + this.telefone +
                 "\nE-mail: " + this.email;

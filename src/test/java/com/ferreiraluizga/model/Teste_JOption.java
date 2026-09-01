@@ -1,33 +1,15 @@
 package com.ferreiraluizga.model;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Teste_JOption {
 
     public static void main(String[] args) {
-        String menu, nome;
+        ArrayList<Cliente> listaCliente = new ArrayList<>();
+        String menu, nome, cpf, telefone, email;
         int quant, op;
         double valor;
-
-        /*
-        // ler string
-        nome = JOptionPane.showInputDialog("Digite o nome");
-
-        // ler inteiro
-        quant = Integer.parseInt(JOptionPane.showInputDialog("Digite a quantidade"));
-
-        // ler double
-        valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o preço"));
-
-        // mostrar informações
-        JOptionPane.showMessageDialog(null, nome +
-                "\nQuantidade: " + quant +
-                "\nR$ " + valor);
-
-        // exemplo formatando String
-        String teste = String.format("Produto: %s \nQuantidade: %d \nPreço: R$ %.2f", nome, quant, valor);
-        JOptionPane.showMessageDialog(null, teste);
-        */
 
         // exemplo menu opções
         menu = "**********************" +
@@ -40,10 +22,19 @@ public class Teste_JOption {
 
             switch (op) {
                 case 1:
-                    JOptionPane.showMessageDialog(null, "Você escolheu cadastrar");
+                    nome = JOptionPane.showInputDialog("Digite o nome do cliente");
+                    cpf = JOptionPane.showInputDialog("Digite o cpf do cliente");
+                    telefone = JOptionPane.showInputDialog("Digite o telefone do cliente");
+                    email = JOptionPane.showInputDialog("Digite o email do cliente");
+
+                    // adicionando instância de um cliente à lista
+                    listaCliente.add(new Cliente(nome, cpf, telefone, email));
+
+                    JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
                     break;
                 case 2:
-                    JOptionPane.showMessageDialog(null, "Você escolheu listar");
+                    // apresentando arraylist
+                    JOptionPane.showMessageDialog(null, listaCliente);
                     break;
                 case 3:
                     JOptionPane.showMessageDialog(null, "Você escolheu alterar");

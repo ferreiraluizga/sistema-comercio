@@ -71,7 +71,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "===== Produto: " + this.nome + " =====" +
+        return "Nome: " + this.nome +
                 "\nDescrição: " + this.descricao +
                 "\nPreço: " + this.preco +
                 "\nEstoque: " + this.estoque;
