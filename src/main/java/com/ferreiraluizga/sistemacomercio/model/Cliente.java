@@ -22,8 +22,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Long id, String nome, String cpf, String telefone, String email) {
-        this.id = id;
+    public Cliente(String nome, String cpf, String telefone, String email) {
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
@@ -68,5 +67,16 @@ public class Cliente {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
