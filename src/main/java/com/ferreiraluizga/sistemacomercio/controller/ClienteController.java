@@ -1,10 +1,12 @@
 package com.ferreiraluizga.sistemacomercio.controller;
 
+import com.ferreiraluizga.sistemacomercio.model.Cliente;
 import com.ferreiraluizga.sistemacomercio.service.ClienteService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/clientes")
 public class ClienteController {
 
@@ -13,4 +15,23 @@ public class ClienteController {
     public ClienteController(ClienteService service) {
         this.service = service;
     }
+
+    @GetMapping
+    public String listar(Model model) {
+        model.addAttribute("clientes", service.listar());
+        return "clientes/lista";
+    }
+
+    @GetMapping("/novo")
+    public String novo(Model model) {
+        model.addAttribute("cliente", new Cliente());
+        return "clientes/formulario";
+    }
+
+    @PostMapping("/salvar")
+    public String salvar(@ModelAttribute Cliente cliente) {
+        service.cadastrar(cliente);
+        return "redirect:/clientes";
+    }
+
 }
